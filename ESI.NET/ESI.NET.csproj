@@ -5,18 +5,19 @@
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
     <SccLocalPath>SAK</SccLocalPath>
+    <Platforms>x64</Platforms>
   </PropertyGroup>
 
   <PropertyGroup>
     <TargetFrameworks>net8.0</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2023.12.12</Version>
-    <Authors>Psianna Archeia</Authors>
-    <Company>Sukebe Corporation</Company>
-    <Description>.NET Wrapper for the Eve Online API</Description>
-    <RepositoryUrl>https://github.com/seraphx2/ESI.NET</RepositoryUrl>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Version></Version>
+    <Authors></Authors>
+    <Company></Company>
+    <Description>SMT Version of ESI.Net a .NET Wrapper for the Eve Online API</Description>
+    <RepositoryUrl>https://github.com/Slazanger/ESI.NET</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/seraphx2/ESI.NET</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Slazanger/ESI.NET</PackageProjectUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
@@ -37,12 +38,6 @@
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>LICENSE.txt</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="GetBuildVersion.psm1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
