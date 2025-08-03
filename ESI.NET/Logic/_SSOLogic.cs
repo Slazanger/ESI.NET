@@ -213,7 +213,7 @@ namespace ESI.NET
                 authorizedCharacter.Scopes = scopesClaim;
 
                 // Get more specifc details about authorized character to be used in API calls that require this data about the character
-                var url = $"{_config.EsiUrl}latest/characters/affiliation/?datasource={_config.DataSource.ToEsiValue()}";
+                var url = $"{_config.EsiUrl}characters/affiliation/?datasource={_config.DataSource.ToEsiValue()}";
                 var body = new StringContent(JsonConvert.SerializeObject(new int[] { authorizedCharacter.CharacterID }), Encoding.UTF8, "application/json");
 
                 var client = new HttpClient();

@@ -20,7 +20,7 @@ namespace ESI.NET
                 foreach (var property in replacements)
                     endpoint = endpoint.Replace($"{{{property.Key}}}", property.Value);
 
-            var url = $"{config.EsiUrl}latest{endpoint}?datasource={config.DataSource.ToEsiValue()}";
+            var url = $"{config.EsiUrl}{endpoint}?datasource={config.DataSource.ToEsiValue()}";
 
             //Attach query string parameters
             if (parameters != null)
