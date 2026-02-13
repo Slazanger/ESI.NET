@@ -45,9 +45,9 @@ namespace ESI.NET
                     if (response.StatusCode == HttpStatusCode.OK ||
                         response.StatusCode == HttpStatusCode.Created)
                     {
-                        if ((result.StartsWith("{") && result.EndsWith("}")) || result.StartsWith("[") && result.EndsWith("]"))
-                            Data = JsonConvert.DeserializeObject<T>(result);
-                        else
+                        Data = JsonConvert.DeserializeObject<T>(result);
+                        
+                        if(Data == null)
                             Message = result;
                     }
                     else if (response.StatusCode == HttpStatusCode.NotModified)
