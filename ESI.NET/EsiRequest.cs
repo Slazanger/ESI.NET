@@ -11,6 +11,7 @@ namespace ESI.NET
     internal static class EsiRequest
     {
         internal static string ETag;
+        internal static string CompatiblityHeaderDate = "2025-12-01";
 
         public static async Task<EsiResponse<T>> Execute<T>(HttpClient client, EsiConfig config, RequestSecurity security, HttpMethod httpMethod, string endpoint, Dictionary<string, string> replacements = null, string[] parameters = null, object body = null, string token = null)
         {
@@ -35,6 +36,8 @@ namespace ESI.NET
                     throw new ArgumentException("The request endpoint requires SSO authentication and a Token has not been provided.");
                 request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
             }
+
+            request.Headers.Add("X-Compatibility-Date", CompatiblityHeaderDate);
 
             if (ETag != null)
             {
